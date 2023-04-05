@@ -6,7 +6,6 @@ type strings func(string) bool
 type bytes func(byte) bool
 type bools func(bool) bool
 type complexes func(complex128) bool
-type anythings func(interface{}) bool
 
 func Ints(n []int, f ints) bool {
 	for _, el := range n {
@@ -60,56 +59,4 @@ func Complexes(c []complex128, f complexes) bool {
 		}
 	}
 	return true
-}
-
-func Any(a interface{}, f anythings) bool {
-	if n, ok := a.([]int); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	if n, ok := a.([]float64); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	if n, ok := a.([]string); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	if n, ok := a.([]byte); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	if n, ok := a.([]bool); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	if n, ok := a.([]complex128); ok {
-		for _, el := range n {
-			if f(el) == false {
-				return false
-			}
-		}
-		return true
-	}
-	return false
 }

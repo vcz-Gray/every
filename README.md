@@ -18,7 +18,6 @@ $ go get -u github.com/quepark/every
   - [Strings](#Strings)
   - [Bytes](#Bytes)
   - [Complexes](#Complexes)
-  - [Any](#Any)
     
 ## Description
 
@@ -50,9 +49,4 @@ func Bools([]bool, func(bool) bool) bool
 #### Complexes
 ```go
 func Complexes([]complex128, func(complex128) bool) bool
-```
-
-#### Any
-```go
-func Any(interface{}, func(interface{}) bool) bool
 ```

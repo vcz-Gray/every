@@ -10,15 +10,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func ExampleInts() {
-	fmt.Println(Ints([]int{-5, -3, -1, 1, 3, 5}, func(n int) bool {
-		return int(math.Abs(float64(n)))%2 == 1
-	}))
-	fmt.Println(Ints([]int{-4, -2, 0, 2, 4}, func(n int) bool {
-		return int(math.Abs(float64(n)))%2 == 0
-	}))
-}
-
 func ExampleFloats() {
 	fmt.Println(Floats([]float64{10.1, 10.2, 10.3, 10.4, 10.5}, func(n float64) bool {
 		return math.Ceil(n) == float64(11)
